@@ -680,6 +680,39 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        marksman = {},
+        ltex = {
+          settings = {
+            ltex = {
+              language = 'en-US', -- Default language
+              additionalLanguages = { 'de-DE', 'fr-FR' }, -- Add additional languages
+              dictionary = {
+                ['en-US'] = { 'Neovim', 'Markdown', 'DevOps' }, -- Add custom words per language
+                ['de-DE'] = { 'Neovim', 'Markdown', 'Kubernetes' },
+              },
+              enabled = {
+                'markdown',
+                'gitcommit',
+                'plaintext',
+                'latex',
+                'org',
+                'html',
+                'restructuredtext',
+                'rmd',
+                'quarto',
+                'mail',
+              },
+              disabledRules = {
+                --  ['en-US'] = { 'OXFORD_SPELLING_Z_NOT_S', 'EN_QUOTES' }, -- Example: disable certain rules
+                --  ['de-DE'] = { 'EINDEUTIGE_ANFUEHRUNGSZEICHEN' },
+              },
+              hiddenFalsePositives = {
+                ['en-US'] = { 'TeX' },
+                ['de-DE'] = { 'VPN' },
+              },
+            },
+          },
+        },
         yamlls = {
           settings = {
             redhat = {
