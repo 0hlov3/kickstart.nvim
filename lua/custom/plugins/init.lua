@@ -6,4 +6,8 @@ return {
   {
     'github/copilot.vim',
   },
+  {
+    'towolf/vim-helm',
+    ft = { 'helm' }, -- Load only for Helm files
+  },
 }

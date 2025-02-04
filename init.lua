@@ -666,7 +666,33 @@ require('lazy').setup({
             staticcheck = true,
           },
         },
-        helm_ls = {},
+        helm_ls = {
+          settings = {
+            ['helm-ls'] = {
+              logLevel = 'info',
+              valuesFiles = {
+                mainValuesFile = 'values.yaml',
+                lintOverlayValuesFile = 'values.lint.yaml',
+                additionalValuesFilesGlobPattern = 'values*.yaml',
+              },
+              yamlls = {
+                enabled = true,
+                enabledForFilesGlob = '*.{yaml,yml}',
+                diagnosticsLimit = 50,
+                showDiagnosticsDirectly = false,
+                path = 'yaml-language-server',
+                config = {
+                  schemas = {
+                    kubernetes = 'templates/**',
+                  },
+                  completion = true,
+                  hover = true,
+                  -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
+                },
+              },
+            },
+          },
+        },
         templ = {},
         terraformls = {},
         tflint = {},
@@ -995,7 +1021,33 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'dockerfile',
+        'git_config',
+        'gitcommit',
+        'git_rebase',
+        'gitignore',
+        'gitattributes',
+        'go',
+        'gomod',
+        'gowork',
+        'gosum',
+        'helm',
+        'json5',
+        'terraform',
+        'hcl',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
