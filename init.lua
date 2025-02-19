@@ -987,7 +987,8 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = { signs = false },
     keys = {
-      vim.keymap.set('n', '<leader>st', '<cmd>TodoTelescope<cr>', { desc = '[S]earch [T]ODOs' }),
+      { '<leader>st', '<cmd>TodoTelescope<cr>', desc = '[S]earch [T]ODOs' },
+      { '<leader>sT', '<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>', desc = 'Todo/Fix/Fixme' },
     },
   },
 
