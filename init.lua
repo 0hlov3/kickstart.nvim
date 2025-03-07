@@ -668,6 +668,7 @@ require('lazy').setup({
               loopclousure = false,
             },
             staticcheck = true,
+            gofumpt = true,
           },
         },
         helm_ls = {
