@@ -18,4 +18,9 @@ return {
   {
     'xiyaowong/nvim-transparent',
   },
+  {
+    'ravibrock/spellwarn.nvim',
+    event = 'VeryLazy',
+    config = true,
+  },
 }
