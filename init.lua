@@ -688,7 +688,6 @@ require('lazy').setup({
             },
           },
         },
-
         bashls = {
           bashIde = {
             globPattern = '*@(.sh|.inc|.bash|.command)',
