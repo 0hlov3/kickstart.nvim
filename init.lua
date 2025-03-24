@@ -101,6 +101,7 @@ vim.g.have_nerd_font = true
 -- spell checking
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us', 'de_de' }
+vim.opt_local.spelloptions = { 'camel' }
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
